@@ -1,9 +1,23 @@
+/* BASE STYLES */
+
 #screen {
     position: relative;
+    display: grid;
+    grid-template-areas:
+        "nav nav"
+        "welcome photo"
+        "planet planet";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 2vw;
     height: 100vh;
     width: 100vw;
+    padding: 2vw;
     background-color: rgb(35, 43, 40);
+    box-sizing: border-box;
 }
+
+/* OVERLAY EFFECTS */
 
 #scan, 
 #grid {
@@ -16,29 +30,34 @@
 }
 
 #scan {
-    opacity: 45%;
+    opacity: 0.45;
     z-index: 1;
 }
 
 #grid {
-    opacity: 10%;
+    opacity: 0.1;
     filter: blur(2px);
 }
 
-#content, #topnav, #welcome, #planet {
+/* FONT + COLOR SCHEME */
+
+#content, #topnav, #welcome, #planet, #photo_window {
     font-family: 'VT32', monospace;
     color: rgb(100, 234, 183);
-    text-shadow: 1px 1px 2px rgb(100, 234, 183), 0 0 1em rgb(100, 234, 183), 0 0 0.2em rgb(100, 234, 183);
+    text-shadow: 1px 1px 2px rgb(100, 234, 183),
+                 0 0 1em rgb(100, 234, 183),
+                 0 0 0.2em rgb(100, 234, 183);
+    font-size: clamp(0.8rem, 1vw + 0.3rem, 1.1rem);
 }
 
+/* NAVIGATION BAR */
+
 #topnav {
-    position: absolute;
-    border: 2px double rgb(100, 234, 183);
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 97%;
+    grid-area: nav;
+    border: 0.2vw double rgb(100, 234, 183);
+    border-radius: 0.5vw;
     background-color: rgb(35, 43, 40);
+    padding: 0.5vw;
 }
 
 #topnav ul {
@@ -47,13 +66,8 @@
     padding: 0;
     display: flex;
     justify-content: center;
-}
-
-#topnav ul li {
-    display: block;
-    float: left;
-    padding: 14px 16px;
-    text-decoration: none;
+    flex-wrap: wrap;
+    gap: 2vw;
 }
 
 #topnav ul li a {
@@ -67,57 +81,101 @@
 
 #topnav ul li:hover {
     transform: scale(1.15);
-    text-shadow: 1px 1px 2px rgb(100, 234, 183), 0 0 1em rgb(100, 234, 183), 0 0 0.2em rgb(100, 234, 183);
+    text-shadow: 1px 1px 2px rgb(100, 234, 183),
+                 0 0 1em rgb(100, 234, 183),
+                 0 0 0.2em rgb(100, 234, 183);
 }
+
+/* WELCOME SECTION */
 
 #welcome {
-    position: absolute;
-    height: 65%;
-    width: 42%;
-    padding: 80px;
-    border: 2px groove rgb(100, 234, 183);
-    border-radius: 5px;
-    margin-top: 11vh;
-    margin-left: 1vw;
+    grid-area: welcome;
+    border: 0.2vw groove rgb(100, 234, 183);
+    border-radius: 0.5vw;
     background-color: rgb(35, 43, 40);
+    padding: 4vw;
+    box-sizing: border-box;
 }
 
-#planet {
-    position: absolute;
-    bottom: 7px;
-    right: 40px;
-    width: 42%;
-    height: 37%;
-    opacity: 100%;
-    font-size: 5px;
-    line-height: 1.1;
-    white-space: pre;
-    border: 2px groove rgb(100, 234, 183);
-    border-radius: 5px;
+/* PHOTO WINDOW */
+
+#photo_window {
+    grid-area: photo;
+    border: 0.2vw groove rgb(100, 234, 183);
+    border-radius: 0.5vw;
     background-color: rgb(35, 43, 40);
+    width: 100%;
+    height: 100%;
+}
+
+/* PLANET ASCII ART */
+
+#planet {
+    grid-area: planet;
+    border: 0.2vw groove rgb(100, 234, 183);
+    border-radius: 0.5vw;
+    background-color: rgb(35, 43, 40);
+    font-size: clamp(0.5rem, 0.8vw, 0.8rem);
+    line-height: 1.1;
+    white-space: pre-wrap;
+    word-break: break-word;
+    padding: 2vw;
+    box-sizing: border-box;
 }
 
 #planet pre {
-    margin-left: 200px;
+    margin: 0;
 }
 
-#photo_window {
-    border: 2px groove rgb(100, 234, 183);
-    border-radius: 5px;
-    position: absolute;
-    top: 80px;
-    right: 40px;
-    width: 42%;
-    height: 50%;
-    background-color: rgb(35, 43, 40);
-}
+/* NO SELECT */
 
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    #screen {
+        grid-template-areas:
+            "nav"
+            "photo"
+            "welcome"
+            "planet";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        gap: 4vw;
+        padding: 4vw;
+    }
+
+    #topnav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    #welcome, #photo_window, #planet {
+        width: 100%;
+        padding: 6vw;
+        font-size: clamp(0.8rem, 2vw + 0.3rem, 1rem);
+    }
+
+    #planet {
+        font-size: clamp(0.45rem, 1.5vw, 0.7rem);
+    }
+}
+
+@media (max-width: 480px) {
+    #topnav ul li {
+        padding: 3vw;
+    }
+
+    #welcome, #photo_window, #planet {
+        padding: 8vw;
+    }
 }
