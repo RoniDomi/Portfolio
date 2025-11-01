@@ -1,5 +1,4 @@
-/* BASE STYLES */
-
+/* ===== BASE STYLES ===== */
 #screen {
     position: relative;
     display: grid;
@@ -7,7 +6,7 @@
         "nav nav"
         "welcome photo"
         "planet planet";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     grid-template-rows: auto 1fr auto;
     gap: 2vw;
     height: 100vh;
@@ -15,10 +14,10 @@
     padding: 2vw;
     background-color: rgb(35, 43, 40);
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* OVERLAY EFFECTS */
-
+/* ===== OVERLAY EFFECTS ===== */
 #scan, 
 #grid {
     position: absolute;
@@ -39,19 +38,18 @@
     filter: blur(2px);
 }
 
-/* FONT + COLOR SCHEME */
-
-#content, #topnav, #welcome, #planet, #photo_window {
+/* ===== FONT + COLOR SCHEME ===== */
+#topnav, #welcome, #planet, #photo_window {
     font-family: 'VT32', monospace;
     color: rgb(100, 234, 183);
     text-shadow: 1px 1px 2px rgb(100, 234, 183),
                  0 0 1em rgb(100, 234, 183),
                  0 0 0.2em rgb(100, 234, 183);
     font-size: clamp(0.8rem, 1vw + 0.3rem, 1.1rem);
+    z-index: 2;
 }
 
-/* NAVIGATION BAR */
-
+/* ===== NAVIGATION BAR ===== */
 #topnav {
     grid-area: nav;
     border: 0.2vw double rgb(100, 234, 183);
@@ -86,19 +84,18 @@
                  0 0 0.2em rgb(100, 234, 183);
 }
 
-/* WELCOME SECTION */
-
+/* ===== WELCOME SECTION ===== */
 #welcome {
     grid-area: welcome;
     border: 0.2vw groove rgb(100, 234, 183);
     border-radius: 0.5vw;
     background-color: rgb(35, 43, 40);
-    padding: 4vw;
+    padding: 3vw;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
-/* PHOTO WINDOW */
-
+/* ===== PHOTO WINDOW ===== */
 #photo_window {
     grid-area: photo;
     border: 0.2vw groove rgb(100, 234, 183);
@@ -108,8 +105,7 @@
     height: 100%;
 }
 
-/* PLANET ASCII ART */
-
+/* ===== PLANET SECTION ===== */
 #planet {
     grid-area: planet;
     border: 0.2vw groove rgb(100, 234, 183);
@@ -121,25 +117,17 @@
     word-break: break-word;
     padding: 2vw;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-#planet pre {
-    margin: 0;
-}
-
-/* NO SELECT */
-
+/* ===== NO SELECT ===== */
 .noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
-/* MOBILE */
-
+/* ===== RESPONSIVE LAYOUT ===== */
 @media (max-width: 768px) {
     #screen {
         grid-template-areas:
@@ -153,12 +141,6 @@
         padding: 4vw;
     }
 
-    #topnav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1vw;
-    }
-
     #welcome, #photo_window, #planet {
         width: 100%;
         padding: 6vw;
@@ -168,14 +150,10 @@
     #planet {
         font-size: clamp(0.45rem, 1.5vw, 0.7rem);
     }
-}
 
-@media (max-width: 480px) {
-    #topnav ul li {
-        padding: 3vw;
-    }
-
-    #welcome, #photo_window, #planet {
-        padding: 8vw;
+    #topnav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1vw;
     }
 }
