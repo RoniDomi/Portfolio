@@ -1,12 +1,15 @@
 import BotNav from './botnav';
 import './screen.css';
 import TopNav from './topnav';
+import grid from './assets/grid.jpg';
+import scanlines from './assets/scanlines.png';
+import roni from './assets/roni.jpeg';
 
 function Screen() {
   return (
     <div id="screen">
-      <img src="./assets/scanlines.png" id="scan" className="noselect" />
-      <img src="./assets/grid.jpg" id="grid" className="noselect" />
+      <img src={scanlines} id="scan" className="noselect" />
+      <img src={grid} id="grid" className="noselect" />
 
       <TopNav />
 
@@ -35,7 +38,7 @@ function Screen() {
       </div>
 
       <div id="photo_window">
-        <img src='./assets/roni.jpeg' id='roni' className='noselect'/>
+        <img src={roni} id='roni' className='noselect'/>
       </div>
       
       <BotNav />
