@@ -1,4 +1,4 @@
-import Planet from './planet';
+import BotNav from './botnav';
 import './screen.css';
 import TopNav from './topnav';
 
@@ -34,11 +34,12 @@ function Screen() {
         </p>
       </div>
 
-      <div id="photo_window"></div>
-
-      <div id="planet">
-        <Planet />
+      <div id="photo_window">
+        <img src='' />
       </div>
+      
+      <BotNav />
+
     </div>
   );
 }
