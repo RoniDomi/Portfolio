@@ -5,8 +5,8 @@ import TopNav from './topnav';
 function Screen() {
   return (
     <div id="screen">
-      <img src="./src/assets/scanlines.png" id="scan" className="noselect" />
-      <img src="./src/assets/grid.jpg" id="grid" className="noselect" />
+      <img src="./assets/scanlines.png" id="scan" className="noselect" />
+      <img src="./assets/grid.jpg" id="grid" className="noselect" />
 
       <TopNav />
 
@@ -35,7 +35,7 @@ function Screen() {
       </div>
 
       <div id="photo_window">
-        <img src='./src/assets/roni.jpeg' id='roni' className='noselect'/>
+        <img src='./assets/roni.jpeg' id='roni' className='noselect'/>
       </div>
       
       <BotNav />
