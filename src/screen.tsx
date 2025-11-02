@@ -35,7 +35,7 @@ function Screen() {
       </div>
 
       <div id="photo_window">
-        <img src='' />
+        <img src='./src/assets/roni.jpeg' id='roni' className='noselect'/>
       </div>
       
       <BotNav />
