@@ -1,5 +1,5 @@
 import '../screen.css';
-import roni from '../assets/roni.jpeg';
+// import roni from '../assets/roni.jpeg';
 
 function Aboutme() {
   return (
@@ -28,9 +28,9 @@ function Aboutme() {
             </p>
         </div>
 
-        <div id="photo_window">
-            <img src={roni} id='roni' className='noselect'/>
-        </div>
+        {/* <div id="photo_window">
+          <img src={roni} id='roni' className='noselect'/>
+        </div> */}
     </>
   );
 }
