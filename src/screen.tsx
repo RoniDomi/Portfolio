@@ -3,6 +3,8 @@ import './screen.css';
 import BotNav from './botnav';
 import TopNav from './topnav';
 import Aboutme from './pages/aboutme';
+import Projects from './pages/projects';
+import Resume from './pages/resume';
 
 import grid from './assets/grid.jpg';
 import scanlines from './assets/scanlines.png';
@@ -13,6 +15,8 @@ function Screen() {
 
     const toPage: Record<string, React.ReactNode> = {
         about: <Aboutme />,
+        projects: <Projects />,
+        resume: <Resume />
     }
 
   return (
