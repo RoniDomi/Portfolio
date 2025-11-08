@@ -1,6 +1,6 @@
 import '../screen.css';
 
-export default function Resume({ onNavigate }: { onNavigate: (page: string) => void}) {
+export default function Resume() {
     let linkedin_link = 'https://www.linkedin.com/in/roni-domi-5878a626b/';
     let github_link = 'https://github.com/RoniDomi';
 

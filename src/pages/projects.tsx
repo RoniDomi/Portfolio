@@ -1,11 +1,9 @@
 import '../screen.css';
 
-function Projects() {
+export default function Projects() {
     return(
         <>
-
+            
         </>
     );
 }
-
-export default Projects;

@@ -1,7 +1,7 @@
 import '../screen.css';
 // import roni from '../assets/roni.jpeg';
 
-function Aboutme() {
+export default function Aboutme() {
   return (
     <>
         <div id="welcome">
@@ -34,5 +34,3 @@ function Aboutme() {
     </>
   );
 }
-
-export default Aboutme;
