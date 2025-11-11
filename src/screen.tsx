@@ -5,6 +5,7 @@ import TopNav from './topnav';
 import Aboutme from './pages/aboutme';
 import Projects from './pages/projects';
 import Resume from './pages/resume';
+import ContactForm from './pages/contact';
 
 import grid from './assets/grid.jpg';
 import scanlines from './assets/scanlines.png';
@@ -16,7 +17,8 @@ function Screen() {
     const toPage: Record<string, React.ReactNode> = {
         about: <Aboutme />,
         projects: <Projects />,
-        resume: <Resume />
+        resume: <Resume />,
+        contact: <ContactForm />
     }
 
   return (

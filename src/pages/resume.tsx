@@ -9,8 +9,10 @@ export default function Resume() {
          <div id='resume'>
             <div id='titleinfo'>
                 <h2>Roni Domi</h2>
-                <p>Stoneham, MA | roni.domi001@umb.edu | <a href={linkedin_link} target='blank'>LinkedIn</a> | <a href={github_link} target='blank'>Github</a> </p>
-                <a href='#'>Download PDF version here!</a><br/><br/>
+                <p>Stoneham, MA | domi_roni@yahoo.com | <a href={linkedin_link} target='blank'>LinkedIn</a> | <a href={github_link} target='blank'>Github</a> </p>
+                <a href={"/RoniResume.pdf"} target='_blank' rel='noopener noreferrer'>
+                    Download PDF version here!
+                </a><br/><br/>
             </div>
             <div id='education'>
                 <h2>&gt;Education</h2>
