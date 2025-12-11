@@ -43,11 +43,20 @@ export default function Resume() {
                  <h2>&gt;Experience</h2>
                  <p>
                     <h3>&gt;Retail Associate - CVS Health, Reading, MA</h3>
-                    Provided excellent and consistent customer care in a fast paced environment.
-                    Consistently recognized ffor friendliness and reliability by customers and coworkers.
-                    Completed tasks efficiently and proactively, often taking on additional responsibilty.
-                    Showcased strong teamworking skills, assisting my coworkers whenever possible.
-                    Helped maintain a smooth and productive workflow.
+                    Operated in a high-reliability environment requiring accuracy, attention to detail, and strict procedural
+                    compliance. Managed point-of-sale systems, inventory tracking software, and digital transaction processing with
+                    zero data errors. Prioritized and executed multiple tasks under time pressure while maintaining system accuracy
+                    and customer safety. Identified and resolved front-store workflow inefficiencies to improve transaction speed and
+                    reduce congestion. Worked independently with minimal supervision, demonstrating operational discipline and
+                    accountability.
+                 </p><br/>
+                 <p>
+                    <h3>&gt;Retail Associate - One Albania, Tirana, Albania</h3>
+                    Delivered technical customer support for mobile service plans, device issues, and software-related service
+                    questions. Maintained accurate records of customer transactions within internal enterprise IT systems. Explained
+                    complex service configurations in a clear, structured manner, strengthening technical communication skills.
+                    Collaborated with team members to troubleshoot service issues and optimize customer workflow. Handled
+                    sensitive customer data with strict adherence to privacy and security guidelines.
                  </p>
             </div><br/>
          </div>
