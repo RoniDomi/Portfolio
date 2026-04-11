@@ -15,7 +15,7 @@ const PROJECTS: Project[] = [
   {
     cmd: 'sustainable-labs-bot',
     description:
-      "RAG-based AI assistant for UMass Boston's Sustainable Labs. Served as Technical Lead — drove architecture decisions, built the frontend UI, and coordinated the team throughout development.",
+      "RAG-based AI assistant built for UMass Boston's Sustainable Labs — client work for the university, with potential to become the lab's official chatbot. Served as Technical Lead: drove architecture decisions, built the frontend UI, and coordinated the team.",
     tech: ['Python', 'RAG', 'Gemini', 'Hugging Face', 'React'],
     link: 'https://github.com/RoniDomi/Sustainable-Labs-ChatBot',
     linkLabel: 'GitHub',

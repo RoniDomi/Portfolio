@@ -6,19 +6,21 @@ type TermLine = { text: string; isCmd?: boolean };
 
 const LINES: TermLine[] = [
   { text: '> whoami', isCmd: true },
-  { text: "I'm Roni — a CS student and aspiring software engineer." },
-  { text: "I love building things: low-level systems, visual tools," },
-  { text: "and full-stack web apps. Creating is a passion of mine." },
+  { text: "I'm Roni a CS student at UMass Boston, graduating 2026." },
+  { text: "I lean towards AI development and frontend engineering." },
+  { text: "I've been the techincal lead for projects, built for" },
+  { text: "clients, and like shipping things that are useful while" },
+  { text: "also looking good!" },
   { text: '' },
-  { text: '> skills-and-knowledge', isCmd: true },
-  { text: 'C, C++, Java, Python, JavaScript, TypeScript, React, Vite, CSS' },
-  { text: 'Algorithms, Data Structures, Operating Systems, Cryptography' },
-  { text: 'Windows, Linux, MacOS — Low-Level Design, Web Development' },
+  { text: '> skills', isCmd: true },
+  { text: 'Python, TypeScript, JavaScript, React, Vite, CSS' },
+  { text: 'RAG pipelines, LLM fine-tuning, Gemini, Hugging Face' },
+  { text: 'C, Java, Node.js, MongoDB, Git, Linux' },
   { text: '' },
-  { text: '> currently-exploring', isCmd: true },
-  { text: 'System-level C: building a bash terminal from scratch' },
-  { text: 'Full-stack: developing a digital magazine platform' },
-  { text: 'AI: integrating and experimenting with LLM APIs' },
+  { text: '> currently-working-on', isCmd: true },
+  { text: 'Frontend dev on the MAGE platform — client work' },
+  { text: 'Compiler design, building a Java parser and scanner from scratch' },
+  { text: 'UMass SSL chatbot that could go officially live for the school' },
 ];
 
 export default function Aboutme() {
