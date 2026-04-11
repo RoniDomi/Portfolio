@@ -69,41 +69,52 @@ export default function Aboutme() {
   const activeLine = !done && lineIdx < LINES.length ? LINES[lineIdx] : null;
 
   return (
-    <motion.div
-      id="welcome"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
-      onClick={skip}
-      style={{ cursor: done ? 'default' : 'pointer' }}
-    >
-      <div id="terminal-output">
-        {completedLines.map((line, i) => (
-          <div
-            key={i}
-            className={
-              line.text === ''
-                ? 'term-blank'
-                : line.isCmd
-                ? 'term-cmd'
-                : 'term-text'
-            }
-          >
-            {line.text}
-          </div>
-        ))}
+    <>
+      <motion.div
+        id="welcome"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        onClick={skip}
+        style={{ cursor: done ? 'default' : 'pointer' }}
+      >
+        <div id="terminal-output">
+          {completedLines.map((line, i) => (
+            <div
+              key={i}
+              className={
+                line.text === ''
+                  ? 'term-blank'
+                  : line.isCmd
+                  ? 'term-cmd'
+                  : 'term-text'
+              }
+            >
+              {line.text}
+            </div>
+          ))}
 
-        {activeLine && (
-          <div className={activeLine.isCmd ? 'term-cmd' : 'term-text'}>
-            {activeLine.text.slice(0, charIdx)}
-            <span className="cursor" />
-          </div>
-        )}
+          {activeLine && (
+            <div className={activeLine.isCmd ? 'term-cmd' : 'term-text'}>
+              {activeLine.text.slice(0, charIdx)}
+              <span className="cursor" />
+            </div>
+          )}
 
-        {done && <span className="cursor" />}
-      </div>
+          {done && <span className="cursor" />}
+        </div>
 
-      {!done && <p className="term-skip">[click to skip]</p>}
-    </motion.div>
+        {!done && <p className="term-skip">[click to skip]</p>}
+      </motion.div>
+
+      <motion.div
+        id="photo-placeholder"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <span>[ photo ]</span>
+      </motion.div>
+    </>
   );
 }

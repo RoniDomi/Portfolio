@@ -7,7 +7,7 @@ html {
 #screen {
   position: relative;
   width: 100vw;
-  background-color: rgb(14, 22, 18);
+  background-color: rgb(26, 18, 10);
   overflow-x: hidden;
 }
 
@@ -17,12 +17,12 @@ html {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(64, 220, 170, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(64, 220, 170, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(255, 160, 50, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 160, 50, 0.18) 1px, transparent 1px);
   background-size: 52px 52px;
   pointer-events: none;
   z-index: 0;
-  animation: gridDrift 20s linear infinite;
+  animation: gridDrift 8s linear infinite;
 }
 
 /* CSS scanlines */
@@ -50,10 +50,10 @@ html {
 #screen,
 #screen * {
   font-family: 'VT323', monospace;
-  color: rgb(64, 220, 170);
-  text-shadow: 1px 1px .2px rgb(20, 80, 60),
-               0 0 1em rgb(20, 80, 60),
-               0 0 1em rgb(20, 80, 60);
+  color: rgb(255, 160, 50);
+  text-shadow: 1px 1px .2px rgb(100, 50, 10),
+               0 0 1em rgb(100, 50, 10),
+               0 0 1em rgb(100, 50, 10);
 }
 
 /* === NAVBAR === */
@@ -65,8 +65,8 @@ html {
   padding: 0 40px;
   z-index: 20;
   backdrop-filter: blur(6px);
-  background-color: rgba(14, 22, 18, 0.75);
-  border-bottom: 1px solid rgba(64, 220, 170, 0.15);
+  background-color: rgba(26, 18, 10, 0.75);
+  border-bottom: 1px solid rgba(255, 160, 50, 0.15);
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -83,7 +83,7 @@ html {
 }
 
 #nav-logo:hover {
-  color: rgb(200, 255, 235);
+  color: rgb(255, 228, 190);
 }
 
 #topnav ul {
@@ -119,7 +119,7 @@ html {
 }
 
 #topnav ul li a:hover {
-  color: rgb(200, 255, 235);
+  color: rgb(255, 228, 190);
 }
 
 #topnav ul li a:hover::after {
@@ -131,7 +131,7 @@ html {
   display: inline-block;
   width: 0.55em;
   height: 1em;
-  background: rgb(64, 220, 170);
+  background: rgb(255, 160, 50);
   vertical-align: middle;
   margin-left: 2px;
   animation: blink 1s step-end infinite;
@@ -153,11 +153,42 @@ section {
 }
 
 /* === ABOUT SECTION === */
-#welcome {
-  padding: 110px 60px 60px;
-  width: 100%;
-  max-width: 760px;
+#about {
+  justify-content: center;
+  gap: 60px;
+  padding: 0 60px;
   box-sizing: border-box;
+}
+
+#welcome {
+  max-width: 520px;
+  flex-shrink: 0;
+  padding: 110px 0 60px;
+  box-sizing: border-box;
+}
+
+#photo-placeholder {
+  width: clamp(240px, 26vw, 380px);
+  min-width: clamp(240px, 26vw, 380px);
+  aspect-ratio: 3 / 4;
+  border: 1px dashed rgba(255, 160, 50, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  opacity: 0.5;
+  margin-top: 110px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+#photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
 }
 
 /* === TERMINAL TYPEWRITER === */
@@ -167,7 +198,7 @@ section {
 }
 
 #welcome .term-cmd {
-  color: rgb(200, 255, 235);
+  color: rgb(255, 228, 190);
   font-size: 1.4rem;
   font-style: italic;
   margin-top: 1.4rem;
@@ -179,7 +210,7 @@ section {
 }
 
 #welcome .term-text {
-  color: rgb(64, 220, 170);
+  color: rgb(255, 160, 50);
 }
 
 #welcome .term-blank {
@@ -205,8 +236,8 @@ section {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, rgba(64, 220, 170, 0.35), transparent);
-  box-shadow: 0 0 8px rgba(64, 220, 170, 0.15);
+  background: linear-gradient(to right, rgba(255, 160, 50, 0.35), transparent);
+  box-shadow: 0 0 8px rgba(255, 160, 50, 0.15);
 }
 
 .section-heading h2 {
@@ -235,8 +266,8 @@ section {
 
 .project-card {
   position: relative;
-  background: rgba(14, 22, 18, 0.75);
-  border: 1px solid rgba(64, 220, 170, 0.2);
+  background: rgba(26, 18, 10, 0.75);
+  border: 1px solid rgba(255, 160, 50, 0.2);
   padding: 1.5rem;
   backdrop-filter: blur(4px);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -254,8 +285,8 @@ section {
 }
 
 .project-card:hover {
-  border-color: rgba(64, 220, 170, 0.6);
-  box-shadow: 0 0 28px rgba(64, 220, 170, 0.08);
+  border-color: rgba(255, 160, 50, 0.6);
+  box-shadow: 0 0 28px rgba(255, 160, 50, 0.08);
 }
 
 .project-card:hover::after {
@@ -265,7 +296,7 @@ section {
 .card-preview {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border: 1px dashed rgba(64, 220, 170, 0.3);
+  border: 1px dashed rgba(255, 160, 50, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,7 +320,7 @@ section {
   margin: 0 0 0.65rem;
   font-size: 1.2rem;
   font-style: italic;
-  color: rgb(200, 255, 235);
+  color: rgb(255, 228, 190);
 }
 
 .project-card p {
@@ -308,7 +339,7 @@ section {
 
 .tech-tag {
   padding: 2px 9px;
-  border: 1px solid rgba(64, 220, 170, 0.35);
+  border: 1px solid rgba(255, 160, 50, 0.35);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
 }
@@ -317,7 +348,7 @@ section {
   text-decoration: none;
   font-size: 0.9rem;
   padding: 4px 14px;
-  border: 1px solid rgba(64, 220, 170, 0.35);
+  border: 1px solid rgba(255, 160, 50, 0.35);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -325,9 +356,9 @@ section {
 }
 
 .project-links a:hover {
-  background: rgba(64, 220, 170, 0.08);
-  border-color: rgba(64, 220, 170, 0.65);
-  color: rgb(200, 255, 235);
+  background: rgba(255, 160, 50, 0.08);
+  border-color: rgba(255, 160, 50, 0.65);
+  color: rgb(255, 228, 190);
 }
 
 /* === FOOTER === */
@@ -341,8 +372,8 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 14px 40px;
-  border-top: 1px solid rgba(64, 220, 170, 0.15);
-  background: rgba(14, 22, 18, 0.75);
+  border-top: 1px solid rgba(255, 160, 50, 0.15);
+  background: rgba(26, 18, 10, 0.75);
   backdrop-filter: blur(6px);
   box-sizing: border-box;
 }
@@ -369,7 +400,7 @@ section {
 
 #footer-links a:hover {
   transform: scale(1.2);
-  color: rgb(200, 255, 235);
+  color: rgb(255, 228, 190);
 }
 
 /* === MOBILE === */
@@ -382,8 +413,17 @@ section {
     font-size: 1.1rem;
   }
 
+  #about {
+    padding: 0 24px;
+    gap: 0;
+  }
+
   #welcome {
-    padding: 90px 24px 40px;
+    padding: 90px 0 40px;
+  }
+
+  #photo-placeholder {
+    display: none;
   }
 
   #projects-inner {
