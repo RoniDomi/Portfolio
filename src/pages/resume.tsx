@@ -1,4 +1,5 @@
 import '../screen.css';
+import { motion } from 'framer-motion';
 
 export default function Resume() {
     let linkedin_link = 'https://www.linkedin.com/in/roni-domi-5878a626b/';
@@ -6,7 +7,12 @@ export default function Resume() {
 
     return(
         <>
-         <div id='resume'>
+         <motion.div
+           id='resume'
+           initial={{ opacity: 0, y: 10 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.3 }}
+         >
             <div id='titleinfo'>
                 <h2>Roni Domi</h2>
                 <p>Stoneham, MA | domi_roni@yahoo.com | <a href={linkedin_link} target='blank'>LinkedIn</a> | <a href={github_link} target='blank'>Github</a> </p>
@@ -23,7 +29,7 @@ export default function Resume() {
                     Relevant Coursework: Data Structures & Algorithms, Operating Systems, <br/> 
                     Automata Theory, Cryptography, Embedded Systems
                 </p>
-                <h3>&gt;Epoka Univseriy - BA in Software Engineering</h3>
+                <h3>&gt;Epoka University - BA in Software Engineering</h3>
                 <p>
                     Tirana, Albania<br/>
                     2022 - 2023 | GPA: 3.1 <br/>
@@ -59,7 +65,7 @@ export default function Resume() {
                     sensitive customer data with strict adherence to privacy and security guidelines.
                  </p>
             </div><br/>
-         </div>
+         </motion.div>
         </>
     );
 }

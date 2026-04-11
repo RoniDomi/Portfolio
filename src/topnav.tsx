@@ -1,51 +1,23 @@
-import './screen.css'
+import './screen.css';
 
-interface TopNavigate {
-    onNavigate: (page: string) => void;
-    active: string;
-}
+function TopNav() {
+  const scrollTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
-function TopNav({onNavigate, active}: TopNavigate) {
-    return(
-        <>
-            <div id="topnav">
-                <ul>
-                    <li>
-                        <button 
-                        onClick={() => onNavigate("about")}
-                        className={active === "about" ? "active" : ""}
-                        >
-                            About Me
-                        </button>
-                    </li>
-                    <li>
-                        <button 
-                        onClick={() => onNavigate("projects")}
-                        className={active === "projects" ? "active" : ""}
-                        >
-                            Projects 
-                        </button>
-                    </li>
-                    <li>
-                        <button 
-                        onClick={() => onNavigate("resume")}
-                        className={active === "resume" ? "active" : ""}
-                        >
-                            Resume
-                        </button>
-                    </li>
-                    <li>
-                        <button 
-                        onClick={() => onNavigate("contact")}
-                        className={active === "contact" ? "active" : ""}
-                        >
-                            Contact
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </>
-    )
+  return (
+    <nav id="topnav">
+      <a href="#about" id="nav-logo" onClick={scrollTo('about')}>
+        &gt; roni.domi<span className="cursor" />
+      </a>
+      <ul>
+        <li><a href="#about" onClick={scrollTo('about')}>about</a></li>
+        <li><a href="#projects" onClick={scrollTo('projects')}>projects</a></li>
+        <li><a href="/resume.pdf" target="_blank" rel="noreferrer">resume</a></li>
+      </ul>
+    </nav>
+  );
 }
 
 export default TopNav;

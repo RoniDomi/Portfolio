@@ -2,6 +2,7 @@ import '../screen.css';
 import emailjs from 'emailjs-com';
 import { useRef } from 'react';
 import type { FormEvent } from 'react';
+import { motion } from 'framer-motion';
 
 export default function ContactForm() {
   const form = useRef<HTMLFormElement | null>(null);
@@ -27,7 +28,12 @@ export default function ContactForm() {
 
   return (
     <>
-    <div id='contactform'>
+    <motion.div
+      id='contactform'
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
         <h1>Contact me!</h1>
         <form ref={form} onSubmit={sendEmail}>
             <input type="text" name="name" placeholder="Your name" required />
@@ -35,7 +41,7 @@ export default function ContactForm() {
             <textarea name="message" placeholder="Your message" required />
             <button type="submit">Send</button>
         </form>
-    </div>
+    </motion.div>
     </>
   );
 }
