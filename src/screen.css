@@ -3,22 +3,29 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Tokyo Night palette
+   bg:        #1a1b26  rgb(26,  27,  38)
+   primary:   #7aa2f7  rgb(122, 162, 247)  — blue
+   highlight: #c0caf5  rgb(192, 202, 245)  — lavender fg
+   glow:               rgb(30,  50,  110)  — dark blue shadow
+*/
+
 /* === SCREEN === */
 #screen {
   position: relative;
   width: 100vw;
-  background-color: rgb(26, 18, 10);
+  background-color: rgb(26, 27, 38);
   overflow-x: hidden;
 }
 
-/* CSS grid background — visible animated drift */
+/* CSS grid background */
 #screen::before {
   content: '';
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 160, 50, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 160, 50, 0.18) 1px, transparent 1px);
+    linear-gradient(rgba(122, 162, 247, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 162, 247, 0.08) 1px, transparent 1px);
   background-size: 52px 52px;
   pointer-events: none;
   z-index: 0;
@@ -34,8 +41,8 @@ html {
     0deg,
     transparent,
     transparent 3px,
-    rgba(0, 0, 0, 0.12) 3px,
-    rgba(0, 0, 0, 0.12) 4px
+    rgba(0, 0, 0, 0.1) 3px,
+    rgba(0, 0, 0, 0.1) 4px
   );
   pointer-events: none;
   z-index: 10;
@@ -50,10 +57,10 @@ html {
 #screen,
 #screen * {
   font-family: 'VT323', monospace;
-  color: rgb(255, 160, 50);
-  text-shadow: 1px 1px .2px rgb(100, 50, 10),
-               0 0 1em rgb(100, 50, 10),
-               0 0 1em rgb(100, 50, 10);
+  color: rgb(122, 162, 247);
+  text-shadow: 1px 1px .2px rgb(30, 50, 110),
+               0 0 1em rgb(30, 50, 110),
+               0 0 1em rgb(30, 50, 110);
 }
 
 /* === NAVBAR === */
@@ -65,8 +72,8 @@ html {
   padding: 0 40px;
   z-index: 20;
   backdrop-filter: blur(6px);
-  background-color: rgba(26, 18, 10, 0.75);
-  border-bottom: 1px solid rgba(255, 160, 50, 0.15);
+  background-color: rgba(26, 27, 38, 0.8);
+  border-bottom: 1px solid rgba(122, 162, 247, 0.15);
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -83,7 +90,7 @@ html {
 }
 
 #nav-logo:hover {
-  color: rgb(255, 228, 190);
+  color: rgb(192, 202, 245);
 }
 
 #topnav ul {
@@ -119,7 +126,7 @@ html {
 }
 
 #topnav ul li a:hover {
-  color: rgb(255, 228, 190);
+  color: rgb(192, 202, 245);
 }
 
 #topnav ul li a:hover::after {
@@ -131,7 +138,7 @@ html {
   display: inline-block;
   width: 0.55em;
   height: 1em;
-  background: rgb(255, 160, 50);
+  background: rgb(122, 162, 247);
   vertical-align: middle;
   margin-left: 2px;
   animation: blink 1s step-end infinite;
@@ -171,7 +178,7 @@ section {
   width: clamp(240px, 26vw, 380px);
   min-width: clamp(240px, 26vw, 380px);
   aspect-ratio: 3 / 4;
-  border: 1px dashed rgba(255, 160, 50, 0.3);
+  border: 1px dashed rgba(122, 162, 247, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,7 +205,7 @@ section {
 }
 
 #welcome .term-cmd {
-  color: rgb(255, 228, 190);
+  color: rgb(192, 202, 245);
   font-size: 1.4rem;
   font-style: italic;
   margin-top: 1.4rem;
@@ -210,7 +217,7 @@ section {
 }
 
 #welcome .term-text {
-  color: rgb(255, 160, 50);
+  color: rgb(122, 162, 247);
 }
 
 #welcome .term-blank {
@@ -236,8 +243,8 @@ section {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, rgba(255, 160, 50, 0.35), transparent);
-  box-shadow: 0 0 8px rgba(255, 160, 50, 0.15);
+  background: linear-gradient(to right, rgba(122, 162, 247, 0.35), transparent);
+  box-shadow: 0 0 8px rgba(122, 162, 247, 0.15);
 }
 
 .section-heading h2 {
@@ -266,8 +273,8 @@ section {
 
 .project-card {
   position: relative;
-  background: rgba(26, 18, 10, 0.75);
-  border: 1px solid rgba(255, 160, 50, 0.2);
+  background: rgba(26, 27, 38, 0.8);
+  border: 1px solid rgba(122, 162, 247, 0.2);
   padding: 1.5rem;
   backdrop-filter: blur(4px);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -285,8 +292,8 @@ section {
 }
 
 .project-card:hover {
-  border-color: rgba(255, 160, 50, 0.6);
-  box-shadow: 0 0 28px rgba(255, 160, 50, 0.08);
+  border-color: rgba(122, 162, 247, 0.6);
+  box-shadow: 0 0 28px rgba(122, 162, 247, 0.08);
 }
 
 .project-card:hover::after {
@@ -296,7 +303,7 @@ section {
 .card-preview {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border: 1px dashed rgba(255, 160, 50, 0.3);
+  border: 1px dashed rgba(122, 162, 247, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -320,7 +327,7 @@ section {
   margin: 0 0 0.65rem;
   font-size: 1.2rem;
   font-style: italic;
-  color: rgb(255, 228, 190);
+  color: rgb(192, 202, 245);
 }
 
 .project-card p {
@@ -339,7 +346,7 @@ section {
 
 .tech-tag {
   padding: 2px 9px;
-  border: 1px solid rgba(255, 160, 50, 0.35);
+  border: 1px solid rgba(122, 162, 247, 0.35);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
 }
@@ -348,7 +355,7 @@ section {
   text-decoration: none;
   font-size: 0.9rem;
   padding: 4px 14px;
-  border: 1px solid rgba(255, 160, 50, 0.35);
+  border: 1px solid rgba(122, 162, 247, 0.35);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -356,9 +363,9 @@ section {
 }
 
 .project-links a:hover {
-  background: rgba(255, 160, 50, 0.08);
-  border-color: rgba(255, 160, 50, 0.65);
-  color: rgb(255, 228, 190);
+  background: rgba(122, 162, 247, 0.08);
+  border-color: rgba(122, 162, 247, 0.65);
+  color: rgb(192, 202, 245);
 }
 
 /* === FOOTER === */
@@ -372,8 +379,8 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 14px 40px;
-  border-top: 1px solid rgba(255, 160, 50, 0.15);
-  background: rgba(26, 18, 10, 0.75);
+  border-top: 1px solid rgba(122, 162, 247, 0.15);
+  background: rgba(26, 27, 38, 0.8);
   backdrop-filter: blur(6px);
   box-sizing: border-box;
 }
@@ -400,7 +407,7 @@ section {
 
 #footer-links a:hover {
   transform: scale(1.2);
-  color: rgb(255, 228, 190);
+  color: rgb(192, 202, 245);
 }
 
 /* === MOBILE === */
