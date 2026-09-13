@@ -1,15 +1,166 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roni Domi Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roni Domi - Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#top">roni domi</a>
+  <nav>
+    <a href="#about">about</a>
+    <a href="#work">projects & skills</a>
+    <a href="#contact">contact</a>
+    <a href="./Roni-Domi-Resume.pdf" target="_blank" class="resume">resume ↗</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-kicker">software engineer · boston, ma</div>
+  <h1>Hello, I'm Roni!</h1>
+  <p>I’m a recent Computer Science graduate interested in software engineering, systems, and practical AI applications.</p>
+  <div class="hero-links">
+    <a class="pill" href="#work">see my work</a>
+    <a href="#contact">get in touch →</a>
+  </div>
+</section>
+
+<section class="about section" id="about">
+  <div class="section-index">01 / about me</div>
+  <div class="about-copy">
+    <h2>Software, systems, and AI  with a focus on building useful things.</h2>
+    <p>I’m a Computer Science graduate from UMass Boston, proudly Summa Cum Laude, with experience across frontend development, systems programming, and applied AI.</p>
+    <p>Recent significant work includes leading the frontend of a React platform for an external client and contributing to a presented solution for a RAG research assistant for the UMass Boston Sustainable Solutions Lab at their request.</p>
+    <p>My focus and interest mainly lies in these areas, but I like experimenting and intertwining my passions. Some other projects I have worked on that are smaller in scope involve a few game development demos,
+       with established engines but also from scratch, and also experimenting with the idea of an independent blog / magazine. I'm always 
+       trying to learn and work on new things, and through software and it's wide reach, I get to explore a lot of them while improving my skills.</p>
+  </div>
+</section>
+
+<section class="work section" id="work">
+  <div class="section-head">
+    <div class="section-index">02 / key projects</div>
+  </div>
+
+  <article class="project featured">
+    <div class="project-number">01</div>
+    <div class="project-main">
+      <div class="project-top">
+        <div>
+          <p class="eyebrow">React · TypeScript · Vite</p>
+          <h3>MAGE Platform</h3>
+        </div>
+        <a class="arrow" href="https://a4mage.github.io/MAGEPlatform/" target="_blank" rel="noreferrer">↗</a>
+      </div>
+      <p>A platform built by a five-person Agile team around the client's MAGE engine; A tool for creating audio visualizations. I led frontend development of the homepage and helped establish a consistent visual language across the platform.</p>
+      <div class="tags"><span>React</span><span>TypeScript</span><span>Vite</span><span>Git</span></div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-number">02</div>
+    <div class="project-main">
+      <div class="project-top">
+        <div>
+          <p class="eyebrow">RAG · React · Python · Gemini</p>
+          <h3>Sustainable Solutions Lab Research Assistant</h3>
+        </div>
+        <a class="arrow" href="https://sustainable-labs-chat-bot.vercel.app/" target="_blank" rel="noreferrer">↗</a>
+      </div>
+      <p>A chatbot helper, made using a corpus of Sustainable Solutions Lab documents to answer questions about the lab’s research and work. I worked and collaborated with team members to imrpove the AI answer generation speed and accuracy performance, as well as the front end, providing not only the desired brand identity but also multiple ease of use features.</p>
+      <div class="tags"><span>RAG</span><span>Python</span><span>React</span><span>Gemini</span></div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-number">03</div>
+    <div class="project-main">
+      <div class="project-top">
+        <div>
+          <p class="eyebrow">Hugging Face · CUDA · LLMs</p>
+          <h3>LLM Evaluation &amp; Parameter Experimentation</h3>
+        </div>
+      </div>
+      <p>A game-review bot exploring pretrained language models, model size, generation parameters, and evaluation. Outputs were compared with human-written reviews using AI-based judges and quantitative metrics.</p>
+      <div class="tags"><span>Machine Learning</span><span>CUDA</span><span>Evaluation</span></div>
+    </div>
+  </article>
+</section>
+
+<section class="smaller-work section">
+  <div class="section-head">
+    <div class="section-index">03 / smaller work</div>
+    <a href="https://github.com/RoniDomi" target="_blank" rel="noreferrer">view all on GitHub ↗</a>
+  </div>
+
+  <div class="small-projects">
+    <article class="small-project">
+      <div>
+        <h3>Huffman Compression</h3>
+      </div>
+      <p>File compression tool implementing Huffman coding, frequency trees, and variable-length bit sequences.</p>
+      <p class="eyebrow">C · Algorithms</p>
+      <a href="https://github.com/RoniDomi/Huffman-Compression" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </article>
+
+    <article class="small-project">
+      <div>
+        <h3>AI Agent</h3>
+      </div>
+      <p>Autonomous AI agent built with the OpenAI API, exploring multi-step reasoning and tool use.</p>
+      <p class="eyebrow">Python · AI</p>
+      <a href="https://github.com/RoniDomi/Ai-agent" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </article>
+
+    <article class="small-project">
+      <div>
+        <h3>Miller-Rabin-C</h3>
+      </div>
+      <p>Implementation of the Miller-Rabin probabilistic primality test with a small number generator.</p>
+      <p class="eyebrow">C · Cryptography</p>
+      <a href="https://github.com/RoniDomi/Miller-Rabin-C" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </article>
+
+    <article class="small-project">
+      <div>
+        <h3>Visualizer</h3>
+      </div>
+      <p>A smaller graphics experiment exploring visualization and rendering in C.</p>
+      <p class="eyebrow">C · Graphics</p>
+      <a href="https://github.com/RoniDomi/Visualizer" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </article>
+  </div>
+</section>
+
+<section class="toolbox section">
+  <div class="section-index">04 / toolbox</div>
+  <div class="tools">
+    <div><b>Languages</b><span>C · C++ · Python · Java · TypeScript · JavaScript</span></div>
+    <div><b>Web &amp; AI</b><span>React · Vite · Node.js · Supabase · RAG · LLMs</span></div>
+    <div><b>Systems</b><span>Linux/Unix · Git · CUDA · Compiler Design · Networking · Cryptography</span></div>
+  </div>
+</section>
+
+<section class="contact section" id="contact">
+  <div class="section-index">05 / contact</div>
+  <div>
+    <h2>Let’s build something.</h2>
+    <p>I’m currently looking for entry-level software engineering opportunities.</p>
+    <a class="email" href="mailto:ronidomicontact@gmail.com">Email me ↗</a>
+    <div class="socials">
+        <a href="https://github.com/RoniDomi" target="_blank">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/roni-domi-5878a626b/" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><span>roni domi · 2026</span></footer>
+</body>
 </html>

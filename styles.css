@@ -1,0 +1,463 @@
+:root {
+  --bg: #f8f8f5;
+  --text: #151515;
+  --muted: #70706c;
+  --line: #e6e6e1;
+  --grid: #f4f4f0;
+  --accent: #6f8fdc;
+}
+
+
+/* Reset & Base */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 64px 64px;
+
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* Navigation */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  width: min(1160px, calc(100% - 48px));
+  height: 76px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(248, 248, 245, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.nav nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav nav a {
+  color: #5e5e5a;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.73rem;
+}
+
+.nav nav a:hover {
+  color: var(--text);
+}
+
+.resume {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #aaa;
+}
+
+
+/* Layout */
+
+main {
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+}
+
+.section {
+  padding: 105px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-index,
+.eyebrow,
+.project-number,
+.hero-kicker,
+footer {
+  font-family: "JetBrains Mono", monospace;
+}
+
+
+/* Hero */
+
+.hero {
+  min-height: 650px;
+  padding: 150px 0 130px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-kicker {
+  margin-bottom: 28px;
+
+  color: #777;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.hero h1 {
+  max-width: 1000px;
+  margin: 0;
+
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  line-height: 0.93;
+  letter-spacing: -0.075em;
+}
+
+.hero h1 em {
+  color: #8b8b87;
+  font-style: normal;
+}
+
+.hero > p {
+  max-width: 570px;
+  margin: 35px 0;
+
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.pill {
+  padding: 12px 19px;
+
+  background: var(--text);
+  color: #fff;
+  border-radius: 999px;
+}
+
+
+/* Section Labels */
+
+.section-index {
+  color: #858581;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+
+
+/* About */
+
+.about {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 65px;
+}
+
+.about-copy {
+  max-width: 760px;
+}
+
+.about h2,
+.contact h2 {
+  margin: 0 0 30px;
+
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+
+.about p {
+  max-width: 690px;
+  color: var(--muted);
+}
+
+
+/* Projects */
+
+.work {
+  padding-bottom: 85px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 52px;
+}
+
+.section-head > span {
+  color: #9a9a95;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 35px;
+
+  padding: 58px 0;
+  border-top: 1px solid var(--line);
+}
+
+.project-number {
+  padding-top: 6px;
+
+  color: #969691;
+  font-size: 0.72rem;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+
+  color: #888;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.project h3 {
+  margin: 0;
+
+  font-size: clamp(1.7rem, 3.2vw, 2.65rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.project-main > p {
+  max-width: 760px;
+  margin: 23px 0;
+
+  color: var(--muted);
+}
+
+.arrow {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.arrow:hover {
+  transform: translate(2px, -2px);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tags span {
+  padding: 5px 9px;
+
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid #d8d8d2;
+  border-radius: 999px;
+
+  color: #62625e;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.64rem;
+}
+
+
+/* Toolbox */
+
+.toolbox {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 65px;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.tools div {
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.tools b {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+}
+
+.tools span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+
+/* Contact */
+
+.contact {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 65px;
+
+  padding-bottom: 130px;
+}
+
+.contact h2 {
+  margin-top: 0;
+}
+
+.contact p {
+  color: var(--muted);
+}
+
+.email {
+  display: inline-block;
+  margin-top: 15px;
+
+  border-bottom: 1px solid #aaa;
+
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  letter-spacing: -0.035em;
+}
+
+.socials {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+}
+
+
+/* Footer */
+
+footer {
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+  padding: 24px 0 35px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid var(--line);
+
+  color: #92928d;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* Mobile */
+
+@media (max-width: 720px) {
+
+  .nav {
+    width: calc(100% - 32px);
+    height: 68px;
+  }
+
+  .nav nav {
+    gap: 14px;
+  }
+
+  .nav nav a:not(.resume) {
+    display: none;
+  }
+
+
+  .hero {
+    min-height: 580px;
+    padding: 105px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .about,
+  .toolbox,
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+
+  .project {
+    grid-template-columns: 40px 1fr;
+    gap: 15px;
+  }
+
+  .project-top {
+    gap: 10px;
+  }
+
+  .project h3 {
+    font-size: 1.65rem;
+  }
+
+
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head > span {
+    display: block;
+    margin-top: 10px;
+  }
+
+
+  footer {
+    display: block;
+  }
+
+  footer span + span {
+    display: block;
+    margin-top: 7px;
+  }
+}
